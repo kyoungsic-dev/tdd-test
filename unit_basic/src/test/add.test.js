@@ -1,4 +1,4 @@
-const add = require('../add.js');
+const add = require('../add');
 
 test('add', () => {
   expect(add(3, 5)).toBe(8);

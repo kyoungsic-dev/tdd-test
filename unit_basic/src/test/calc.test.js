@@ -1,4 +1,4 @@
-const Calculator = require('../calculator.js');
+const Calculator = require('../calculator');
 
 describe('Calc', () => {
   let cal;
@@ -25,6 +25,13 @@ describe('Calc', () => {
     cal.set(3);
     cal.add(5);
     expect(cal.value).toBe(8);
+  });
+
+  it('더한 값이 100이상일 수 없음', () => {
+    cal.set(51);
+    expect(() => {
+      cal.add(50);
+    }).toThrow('Value can not be greater than 100');
   });
 
   it('substracts', () => {
